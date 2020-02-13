@@ -1,6 +1,18 @@
-#server:
-#  port: 8090
+server:
+  port: 8090
 
 spring:
   application:
-    name: pcf-demo
+    name: pcf-boot-mysql
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3306/pcf_mysql_db?createDatabaseIfNotExist=true
+    username: root
+    password: secret
+  jpa:
+    hibernate.ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
